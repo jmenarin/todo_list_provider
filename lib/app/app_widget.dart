@@ -23,7 +23,7 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(sqliteAdmConnection);
+    WidgetsBinding.instance.addObserver(sqliteAdmConnection); //Observa o ciclo de vida do App
   }
 
   @override
