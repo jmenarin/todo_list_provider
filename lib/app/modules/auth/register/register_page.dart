@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/notifier/default_listener_notifier.dart';
-import 'package:todo_list_provider/app/core/ui/messages.dart';
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
 import 'package:todo_list_provider/app/core/validators/validators.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_field.dart';
@@ -10,7 +9,7 @@ import 'package:todo_list_provider/app/modules/auth/register/register_controller
 import 'package:validatorless/validatorless.dart';
 
 class RegisterPage extends StatefulWidget {
-  RegisterPage({super.key});
+  const RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -90,7 +89,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.width * .5,
             child: const FittedBox(
               fit: BoxFit.fitHeight,
@@ -111,7 +110,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           Validatorless.email('E-mail invalido'),
                         ]),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       TodoListField(
                         label: 'Senha',
                         obscureText: true,
@@ -122,7 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               6, 'Senha deve ter pelo menos 6 caracteres'),
                         ]),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       TodoListField(
                         label: 'Confirma Senha',
                         obscureText: true,
@@ -133,7 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               _passwordEC, 'Senha diferente de confirma senha'),
                         ]),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: ElevatedButton(

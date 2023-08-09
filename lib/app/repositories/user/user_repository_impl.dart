@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:todo_list_provider/app/exceptions/auth_exception.dart';
 import 'package:todo_list_provider/app/repositories/user/user_repository.dart';
 
 class UserRepositoryImpl implements UserRepository {
-  FirebaseAuth _firebaseAuth;
+  final FirebaseAuth _firebaseAuth;
 
   UserRepositoryImpl({required FirebaseAuth firebaseAuth})
       : _firebaseAuth = firebaseAuth;
@@ -18,8 +17,6 @@ class UserRepositoryImpl implements UserRepository {
           email: email, password: password);
       return userCredential.user;
     } on FirebaseAuthException catch (e, s) {
-      print(e);
-      print(s);
       if (e.code == 'email-already-in-use') {
         final loginTypes =
             await _firebaseAuth.fetchSignInMethodsForEmail(email);
@@ -75,6 +72,7 @@ class UserRepositoryImpl implements UserRepository {
     }
   }
 
+  @override
   Future<User?> googleLogin() async {
     List<String>? loginMethods;
     try {

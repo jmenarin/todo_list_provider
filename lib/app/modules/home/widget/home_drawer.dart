@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/auth/auth_provider.dart';
 import 'package:todo_list_provider/app/core/ui/messages.dart';
@@ -59,7 +58,7 @@ class HomeDrawer extends StatelessWidget {
                   context: context,
                   builder: (_) {
                     return AlertDialog(
-                      title: Text('Alterar nome'),
+                      title: const Text('Alterar nome'),
                       content: TextField(
                         onChanged: (value) => nameVN.value = value,
                       ),
@@ -84,16 +83,16 @@ class HomeDrawer extends StatelessWidget {
                                 Navigator.of(context).pop();
                               }
                             },
-                            child: Text('Alterar')),
+                            child: const Text('Alterar')),
                       ],
                     );
                   });
             },
-            title: Text('Alterar nome'),
+            title: const Text('Alterar nome'),
           ),
           ListTile(
             onTap: () => context.read<AuthProvider>().logout(),
-            title: Text('Sair'),
+            title: const Text('Sair'),
           )
         ],
       ),

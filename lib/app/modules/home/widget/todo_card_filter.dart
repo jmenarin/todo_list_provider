@@ -12,7 +12,7 @@ class _TodoCardFilterState extends State<TodoCardFilter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         minHeight: 120,
         maxWidth: 150,
       ),
@@ -35,7 +35,7 @@ class _TodoCardFilterState extends State<TodoCardFilter> {
               color: Colors.white,
             ),
           ),
-          Text('Hoje',
+          const Text('Hoje',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class _TodoCardFilterState extends State<TodoCardFilter> {
               )),
           LinearProgressIndicator(
             backgroundColor: context.primaryColorLight,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
             value: 0.4,
           )
         ],

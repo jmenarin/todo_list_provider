@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                       child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffF0F3F7),
+                        color: const Color(0xffF0F3F7),
                         border: Border(
                             top: BorderSide(
                                 width: 2, color: Colors.grey.withAlpha(50)))),

@@ -30,9 +30,7 @@ class DefaultListenerNotifier {
         }
         Messages.of(context).showError(changeNotifier.error ?? 'Erro interno');
       } else if (changeNotifier.isSuccess) {
-        if (successCallback != null) {
-          successCallback(changeNotifier);
-        }
+        successCallback(changeNotifier);
       }
     });
   }
